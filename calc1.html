@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:  linear-gradient(rgba(9, 9, 9, 0.377), rgba(0, 0, 0, 0.393), rgba(0, 0, 0, 0.377)),url(https://as2.ftcdn.net/v2/jpg/02/99/84/89/1000_F_299848927_S0EwX0P6HWGigW6qZWFIBaczKMQuq5D9.jpg); /* image file's path */
+    }
+    .calculator {
+      width: 340px;
+      height: 410px;
+      background-color: #0a0a0ae2;
+      border-radius: 5px;
+      padding: 10px;
+      margin-left: 540px;
+      margin-top: 100px;
+    }
+    .calculator input[type="button"] {
+      width: 70px;
+      height: 60px;
+      font-size: 20px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+      background-color: #070707;
+      color: white;
+    }
+    .calculator input[type="text"] {
+      width: 98%;
+      height: 50px;
+      font-size: 20px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      border color: purple;
+      text-align: right;
+    }
+    .calculator button{
+      width: 70px;
+      height: 60px;
+      font-size: 20px;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+      background-color: #040404fc;
+      color: rgb(214, 197, 198);
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <input type="text" id="result" readonly>
+    <input type="button" value="1" onclick="document.getElementById('result').value += '1'">
+    <input type="button" value="2" onclick="document.getElementById('result').value += '2'">
+    <input type="button" value="3" onclick="document.getElementById('result').value += '3'">
+    <input type="button" value="+" onclick="document.getElementById('result').value += '+'">
+    <br>
+    <input type="button" value="4" onclick="document.getElementById('result').value += '4'">
+    <input type="button" value="5" onclick="document.getElementById('result').value += '5'">
+    <input type="button" value="6" onclick="document.getElementById('result').value += '6'">
+    <input type="button" value="-" onclick="document.getElementById('result').value += '-'">
+    <br>
+    <input type="button" value="7" onclick="document.getElementById('result').value += '7'">
+    <input type="button" value="8" onclick="document.getElementById('result').value += '8'">
+    <input type="button" value="9" onclick="document.getElementById('result').value += '9'">
+    <input type="button" value="/" onclick="document.getElementById('result').value += '/'">
+    <br>
+    <input type="button" value="0" onclick="document.getElementById('result').value += '0'">
+    <input type="button" value="." onclick="document.getElementById('result').value += '.'">
+    <button onclick="calculate()">=</button>
+    <input type="button" value="*" onclick="document.getElementById('result').value += '*'">
+    <br>
+    <button onclick="clearDisplay()">C</button>
+    <input type="button" value="(" onclick="document.getElementById('result').value += '('">
+    <input type="button" value=")" onclick="document.getElementById('result').value += ')'">
+  </div>
+</body>
+<script>
+  function clearDisplay() {
+  document.getElementById('result').value = '';
+}
+function calculate() {
+            try {
+                document.getElementById('result').value = eval(document.getElementById('result').value);
+            } catch (error) {
+                document.getElementById('result').value = 'Error';
+            }
+        }
+</script>
+</html>
